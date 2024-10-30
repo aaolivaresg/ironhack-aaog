@@ -14,3 +14,5 @@ jobs:
      
       - name: Testing simulation 
         run: echo "Testing simulation "
+      - name: Ensure success 
+        run: exit 0  # 
