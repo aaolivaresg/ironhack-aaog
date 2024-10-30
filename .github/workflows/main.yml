@@ -1,0 +1,16 @@
+name: Automate github action
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+     
+      - name: Testing simulation 
+        run: echo "Testing simulation "
