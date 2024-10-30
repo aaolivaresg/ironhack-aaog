@@ -1,0 +1,33 @@
+name: Workflow for ironhack-aaog
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Linting simulation
+        run: echo "Linting simulation process..."
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    
+    steps:
+     
+      - name: Testing simulation 
+        run: echo "Testing simulation "
+      - name: Ensure success 
+        run: exit 0  # 
+        
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'  
+    needs: test 
+
+    steps:
+      - name: Deploy simulation
+        run: echo "Simulation deploy to any env"

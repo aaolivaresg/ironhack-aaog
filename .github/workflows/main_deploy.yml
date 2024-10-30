@@ -1,0 +1,15 @@
+name: Deploy Simulation Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Simulating deploy after merge
+        run: echo "Simulating deploy after merge"
